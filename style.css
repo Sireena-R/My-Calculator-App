@@ -1,0 +1,263 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fce4ec, #ede7f6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: #4a148c;
+}
+
+/* Mode toggle styling */
+.mode-toggle {
+  margin: 20px;
+  font-size: 1.1rem;
+  color: #7b1fa2;
+}
+.mode-toggle input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Calculator table styling */
+table {
+  width: 320px;
+  border-collapse: separate;
+  border-spacing: 12px;
+  background: linear-gradient(135deg, #f8bbd0, #d1c4e9);
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow:
+    0 0 15px #ec407a,
+    0 0 25px #7e57c2;
+}
+
+/* Input box fixes */
+#inputBox {
+  width: 100%;
+  padding: 18px 15px;
+  font-size: 2rem;
+  text-align: right;
+  border: none;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.35);
+  color: #4a148c;
+  box-shadow:
+    0 0 12px #ea80fc,
+    inset 0 0 8px #ab47bc;
+  outline: none;
+  user-select: none;
+  cursor: default;
+  transition: background-color 0.3s ease;
+}
+
+/* Table cell styling */
+td {
+  border-radius: 15px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 1.4rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 15px 0;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Digit buttons */
+.digitButton {
+  background: #f48fb1;
+  color: #4a148c;
+  box-shadow:
+    0 0 10px #f48fb1,
+    inset 0 0 5px #ce93d8;
+}
+.digitButton:hover {
+  box-shadow:
+    0 0 20px #f48fb1,
+    inset 0 0 10px #ba68c8;
+  background: #f06292;
+}
+
+/* Operator buttons */
+.operatorButton {
+  background: #ba68c8;
+  color: #fce4ec;
+  box-shadow:
+    0 0 12px #7e57c2,
+    inset 0 0 7px #9575cd;
+}
+.operatorButton:hover {
+  box-shadow:
+    0 0 25px #7e57c2,
+    inset 0 0 12px #673ab7;
+  background: #9575cd;
+}
+
+/* AC button */
+.ACButton {
+  background: #f06292;
+  color: #fff;
+  box-shadow:
+    0 0 12px #f06292,
+    inset 0 0 7px #e91e63;
+}
+.ACButton:hover {
+  box-shadow:
+    0 0 25px #e91e63,
+    inset 0 0 12px #c2185b;
+  background: #e91e63;
+}
+
+/* For 0 button spanning 2 cols */
+td[colspan="2"] {
+  width: calc(2 * (100% / 4) - 12px);
+}
+
+/* Equal button spanning all cols */
+td[colspan="4"] {
+  background: #ba68c8;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 800;
+  box-shadow:
+    0 0 20px #7e57c2,
+    inset 0 0 15px #673ab7;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+td[colspan="4"]:hover {
+  box-shadow:
+    0 0 40px #7e57c2,
+    inset 0 0 25px #512da8;
+  background: #7e57c2;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: linear-gradient(135deg, #311b92, #512da8);
+  color: #ede7f6;
+}
+
+body.dark-mode table {
+  background: linear-gradient(135deg, #4a148c, #7e57c2);
+  box-shadow:
+    0 0 20px #ab47bc,
+    0 0 40px #7e57c2;
+}
+
+body.dark-mode #inputBox {
+  background: rgba(98, 0, 234, 0.5);
+  color: #ede7f6;
+  box-shadow:
+    0 0 15px #ea80fc,
+    inset 0 0 10px #7b1fa2;
+}
+
+body.dark-mode .digitButton {
+  background: #ab47bc;
+  color: #ede7f6;
+  box-shadow:
+    0 0 12px #ba68c8,
+    inset 0 0 7px #9575cd;
+}
+body.dark-mode .digitButton:hover {
+  background: #ce93d8;
+  box-shadow:
+    0 0 25px #ba68c8,
+    inset 0 0 12px #ba68c8;
+}
+
+body.dark-mode .operatorButton {
+  background: #7b1fa2;
+  box-shadow:
+    0 0 15px #9c27b0,
+    inset 0 0 10px #512da8;
+}
+body.dark-mode .operatorButton:hover {
+  background: #9c27b0;
+  box-shadow:
+    0 0 35px #9c27b0,
+    inset 0 0 20px #7b1fa2;
+}
+
+body.dark-mode .ACButton {
+  background: #d81b60;
+  box-shadow:
+    0 0 15px #e91e63,
+    inset 0 0 10px #ad1457;
+}
+body.dark-mode .ACButton:hover {
+  background: #e91e63;
+  box-shadow:
+    0 0 35px #e91e63,
+    inset 0 0 20px #ad1457;
+}
+
+body.dark-mode td[colspan="4"] {
+  background: #9c27b0;
+  box-shadow:
+    0 0 30px #7b1fa2,
+    inset 0 0 20px #512da8;
+}
+body.dark-mode td[colspan="4"]:hover {
+  background: #7b1fa2;
+  box-shadow:
+    0 0 50px #9c27b0,
+    inset 0 0 30px #311b92;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 400px) {
+  table {
+    width: 90vw;
+    padding: 15px;
+    border-spacing: 8px;
+  }
+  #inputBox {
+    font-size: 1.6rem;
+    padding: 12px 10px;
+  }
+  td {
+    font-size: 1.1rem;
+    padding: 10px 0;
+  }
+}
+@keyframes pulseNeon {
+  0%, 100% {
+    box-shadow: 0 0 20px #ff8ef7, 0 0 40px #b563ff;
+    background-position: 0% 50%;
+  }
+  50% {
+    box-shadow: 0 0 40px #ff8ef7, 0 0 70px #b563ff;
+    background-position: 100% 50%;
+  }
+}
+
+/* Apply to the table background and shadow */
+table {
+  width: 320px;
+  border-collapse: separate;
+  border-spacing: 12px;
+  padding: 25px;
+  border-radius: 25px;
+  background: linear-gradient(270deg, #f8bbd0, #d1c4e9, #f8bbd0);
+  background-size: 400% 400%;
+  animation: pulseNeon 4s ease-in-out infinite;
+  box-shadow:
+    0 0 15px #ec407a,
+    0 0 25px #7e57c2;
+}
+
+/* Input box neon glow pulsate */
+#inputBox {
+  box-shadow:
+    0 0 12px #ea80fc,
+    inset 0 0 8px #ab47bc;
+  animation: pulseNeon 4s ease-in-out infinite;
+}
